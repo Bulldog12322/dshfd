@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Aplicación</title>
+    <style>
+        /* Estilos CSS aquí */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        /* ... */
+    </style>
+</head>
+<body>
+    <h1>Bienvenido a mi Aplicación</h1>
+    <p>Selecciona una opción:</p>
+    <button onclick="mostrarTabla('proveedores')">Proveedores</button>
+    <button onclick="mostrarTabla('clientes')">Clientes</button>
+    <button onclick="mostrarTabla('pedidos')">Pedidos</button>
+
+    <div id="tabla-container"></div>
+
+    <script>
+        function mostrarTabla(tabla) {
+            const container = document.getElementById('tabla-container');
+            container.innerHTML = ''; // Limpiamos el contenedor antes de mostrar la nueva tabla
+
+            let tablaHTML = '<table><tr><th>ID</th><th>Nombre</th><th>Teléfono</th><th>Producto</th></tr>';
+            // Aquí deberías tener lógica para generar la tabla según el valor de 'tabla'
+            // Por ejemplo, si tabla === 'proveedores':
+            if (tabla === 'proveedores') {
+                tablaHTML += '<tr><td>1</td><td>Proveedor 1</td><td>1234567890</td><td>Producto A</td></tr>';
+            }
+            // ... y así para las otras tablas
+
+            tablaHTML += '</table>';
+            container.innerHTML = tablaHTML;
+        }
+    </script>
+</body>
+</html>
